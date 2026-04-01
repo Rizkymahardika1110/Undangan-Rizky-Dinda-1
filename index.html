@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Akad Nikah Rizky & Dinda</title>
+    <title>Undangan Pernikahan Nikah Rizky & Dinda</title>
     <meta name="description" content="Undangan pernikahan sakral Rizky & Dinda. Mohon doa dan restu untuk pernikahan kami.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,222 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+        /* CSS Tambahan untuk Bagian Turut Mengundang */
+        .invited-section {
+            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+            border: 2px solid #d4af37;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .invited-section::before {
+            content: '"';
+            font-family: 'Dancing Script', cursive;
+            font-size: 150px;
+            color: rgba(212, 175, 55, 0.1);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            transform: rotate(180deg);
+        }
+        
+        .invited-section::after {
+            content: '"';
+            font-family: 'Dancing Script', cursive;
+            font-size: 150px;
+            color: rgba(212, 175, 55, 0.1);
+            position: absolute;
+            bottom: -40px;
+            right: 10px;
+        }
+        
+        .invited-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #b8860b;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .invited-title i {
+            margin: 0 15px;
+            color: #d4af37;
+            font-size: 2rem;
+        }
+        
+        .invited-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .invited-item {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            color: #555;
+            border: 1px solid #d4af37;
+            transition: all 0.3s ease;
+            flex: 0 1 auto;
+            text-align: center;
+        }
+        
+        .invited-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            background: #d4af37;
+            color: white;
+        }
+        
+        .invited-item i {
+            margin-right: 8px;
+            color: #d4af37;
+            transition: all 0.3s ease;
+        }
+        
+        .invited-item:hover i {
+            color: white;
+        }
+        
+        .invited-note {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #b8860b;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .invited-subsection {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px dashed #d4af37;
+        }
+        
+        .invited-subtitle {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+        
+        .invited-subtitle i {
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* CSS untuk Map */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 25px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .location-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+        .btn-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-location:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-location i {
+            font-size: 1.1rem;
+        }
+        
+        .location-note {
+            text-align: center;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .invited-title {
+                font-size: 2rem;
+            }
+            
+            .invited-item {
+                font-size: 0.85rem;
+                padding: 8px 15px;
+            }
+            
+            .invited-section::before,
+            .invited-section::after {
+                font-size: 100px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .btn-location {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .invited-item {
+                min-width: auto;
+                text-align: center;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+            
+            .location-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Music Player -->
@@ -33,11 +249,11 @@
             <div class="opening-text">
                 <h1>Undangan Pernikahan</h1>
                 <h2 class="couple-name">Rizky & Dinda</h2>
-                <p class="wedding-date">Minggu, 15 Februari 2026</p>
+                <p class="wedding-date">Minggu, 12 April 2026</p>
                 <p class="instruction">Klik tombol di bawah untuk membuka undangan</p>
             </div>
             
-            <!-- Galeri Foto Pengantin (Tampilan Awal) - Diubah ke JPEG -->
+            <!-- Galeri Foto Pengantin (Tampilan Awal) -->
             <div class="gallery-opening">
                 <div class="gallery-container">
                     <div class="gallery-slide active">
@@ -76,12 +292,12 @@
         <div class="container">
             <!-- Header -->
             <header class="invitation-header">
-                <h1>Undangan Akad Nikah</h1>
+                <h1>Undangan Pernikahan</h1>
                 <h2>Rizky & Dinda</h2>
                 <p class="subtitle">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." (QS. Ar-Rum: 21)</p>
             </header>
 
-            <!-- Galeri Foto Pengantin (Tampilan Kedua) - Diubah ke JPEG -->
+            <!-- Galeri Foto Pengantin (Tampilan Kedua) -->
             <section class="section gallery-section">
                 <h3 class="section-title">Galeri Cinta Kami</h3>
                 <div class="gallery-second">
@@ -102,28 +318,142 @@
                 </div>
             </section>
 
+            <!-- TURUT MENGUNDANG SECTION - DENGAN SEMUA NAMA BARU -->
+            <section class="invited-section">
+                <h3 class="invited-title">
+                    <i class="fas fa-ring"></i>
+                    Turut Mengundang
+                    <i class="fas fa-ring"></i>
+                </h3>
+                
+                <!-- Kelompok 1: Organisasi & Komunitas -->
+                <div class="invited-subsection">
+                    <h4 class="invited-subtitle">
+                        <i class="fas fa-users"></i>
+                        Rekan & Grup
+                        <i class="fas fa-users"></i>
+                    </h4>
+                    <div class="invited-list">
+                        <div class="invited-item"><i class="fas fa-group"></i> Phylon Grup</div>
+                        <div class="invited-item"><i class="fas fa-group"></i> Mabes 92</div>
+                        <div class="invited-item"><i class="fas fa-group"></i> Keretek 92</div>
+                        <div class="invited-item"><i class="fas fa-home"></i> Lembur Panineungan</div>
+                        <div class="invited-item"><i class="fas fa-handshake"></i> Ikasa</div>
+                        <div class="invited-item"><i class="fas fa-briefcase"></i> SAT BODY PT TRISCO</div>
+                        <div class="invited-item"><i class="fas fa-mug-hot"></i> Owner Tianlala & Crew Tianlala</div>
+                        <div class="invited-item"><i class="fas fa-city"></i> Semua Rekan Cibe</div>
+                    </div>
+                </div>
+                
+                <!-- Kelompok 2: Keluarga & Kerabat dari Jakarta -->
+                <div class="invited-subsection">
+                    <h4 class="invited-subtitle">
+                        <i class="fas fa-city"></i>
+                        Keluarga & Kerabat Jakarta
+                        <i class="fas fa-city"></i>
+                    </h4>
+                    <div class="invited-list">
+                        <div class="invited-item"><i class="fas fa-user-friends"></i> Dela</div>
+                        <div class="invited-item"><i class="fas fa-user-tie"></i> Arip Jakarta</div>
+                        <div class="invited-item"><i class="fas fa-user-tie"></i> Bang Uway Jakarta</div>
+                        <div class="invited-item"><i class="fas fa-user-friends"></i> Mely Jakarta</div>
+                    </div>
+                </div>
+                
+                <!-- Kelompok 3: Sahabat & Teman Dekat -->
+                <div class="invited-subsection">
+                    <h4 class="invited-subtitle">
+                        <i class="fas fa-heart"></i>
+                        Sahabat & Teman 
+                        <i class="fas fa-heart"></i>
+                    </h4>
+                    <div class="invited-list">
+                        <div class="invited-item"><i class="fas fa-female"></i> Ziana</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Intan</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Getha</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Niken</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Yunita</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Aisyah</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Resti</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Fitri</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Imas</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Fitri Anggi</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Nura</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Putri Wulandary</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Maryam</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Andita</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Aliya</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Asya</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Elis</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Suci</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Ikhwani Putri</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Teh Melly</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Azizah</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Malda</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Putri</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Dea Dramayanti</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Nayda</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Salsa</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Indah</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Sri Wulandari</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Meypa</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> April</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Suci</div>
+                        <div class="invited-item"><i class="fas fa-female"></i> Triesty</div>
+                    </div>
+                </div>
+                
+                <!-- Kelompok 4: Pemerintah Desa & Keluarga Besar -->
+                <div class="invited-subsection">
+                    <h4 class="invited-subtitle">
+                        <i class="fas fa-landmark"></i>
+                        Pemerintah Desa & Keluarga Besar
+                        <i class="fas fa-landmark"></i>
+                    </h4>
+                    <div class="invited-list">
+                        <div class="invited-item"><i class="fas fa-user-tie"></i> Bpk. Kades Banyusari</div>
+                        <div class="invited-item"><i class="fas fa-user-tie"></i> Bpk. Pipin Aripin (Kadus 4)</div>
+                        <div class="invited-item"><i class="fas fa-star-of-life"></i> Bpk. Udjun (Alm)</div>
+                        <div class="invited-item"><i class="fas fa-star-of-life"></i> Kel. Besar Bpk. Momo Rahmat (Alm)</div>
+                        <div class="invited-item"><i class="fas fa-star-of-life"></i> Bpk. Uyu Suparyu (Alm) & Ibu Nining Warningsih</div>
+                        <div class="invited-item"><i class="fas fa-star-of-life"></i> Bpk. Ayong Sudrajat (Alm) & Ibu Ai Tatih</div>
+                        <div class="invited-item"><i class="fas fa-city"></i> Bpk. Ema Amajun (Jakarta)</div>
+                        <div class="invited-item"><i class="fas fa-users"></i> Bpk. Dadang & Bpk. Yusup</div>
+                        <div class="invited-item"><i class="fas fa-users"></i> Ibu Titin</div>
+                        <div class="invited-item"><i class="fas fa-users"></i> Bpk. Tedy & Popi</div>
+                        <div class="invited-item"><i class="fas fa-users"></i> Bapak Indra & Rani</div>
+                    </div>
+                </div>
+                
+                <p class="invited-note">
+                    <i class="fas fa-hands-helping"></i>
+                    Beserta seluruh keluarga, kerabat, sahabat, dan handai taulan yang tidak dapat disebutkan satu per satu
+                    <i class="fas fa-hands-helping"></i>
+                </p>
+            </section>
+
             <!-- Countdown -->
             <section class="section countdown-section">
                 <h3 class="section-title">Hitungan Mundur Menuju Hari Bahagia</h3>
                 <div class="countdown-container">
                     <div class="countdown-box">
-                        <div class="countdown-value" id="days">13</div>
+                        <div class="countdown-value" id="days">37</div>
                         <div class="countdown-label">Hari</div>
                     </div>
                     <div class="countdown-box">
-                        <div class="countdown-value" id="hours">10</div>
+                        <div class="countdown-value" id="hours">15</div>
                         <div class="countdown-label">Jam</div>
                     </div>
                     <div class="countdown-box">
-                        <div class="countdown-value" id="minutes">20</div>
+                        <div class="countdown-value" id="minutes">28</div>
                         <div class="countdown-label">Menit</div>
                     </div>
                     <div class="countdown-box">
-                        <div class="countdown-value" id="seconds">2</div>
+                        <div class="countdown-value" id="seconds">19</div>
                         <div class="countdown-label">Detik</div>
                     </div>
                 </div>
-                <p class="countdown-date">Minggu, 15 Februari 2026</p>
+                <p class="countdown-date">Minggu, 12 April 2026</p>
             </section>
 
             <!-- Event Details -->
@@ -136,9 +466,9 @@
                         </div>
                         <div class="event-content">
                             <h4>Akad Nikah</h4>
-                            <p class="event-time"><i class="far fa-clock"></i> 10:00 - Selesai</p>
-                            <p class="event-date"><i class="far fa-calendar"></i> Minggu, 15 Februari 2026</p>
-                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Kediaman Dinda, Junti Girang,Katapang, Kabupaten Bandung</p>
+                            <p class="event-time"><i class="far fa-clock"></i> 09.00 - Selesai</p>
+                            <p class="event-date"><i class="far fa-calendar"></i> Minggu, 12 April 2026</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Kp. Junti Girang RT.02 RW.10 Desa Banyusasri Kec.Katapang Kab.Bandung</p>
                         </div>
                     </div>
                     <div class="event-card">
@@ -146,10 +476,10 @@
                             <i class="fas fa-utensils"></i>
                         </div>
                         <div class="event-content">
-                            <h4>Only Akad</h4>
-                            <p class="event-time"><i class="far fa-clock"></i> 10:00 - Selesai</p>
-                            <p class="event-date"><i class="far fa-calendar"></i> Minggu, 15 Februari 2026</p>
-                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Kediaman Dinda, Junti Girang,Katapang, Kabupaten Bandung</p>
+                            <h4>Resepsi</h4>
+                            <p class="event-time"><i class="far fa-clock"></i> 09.00 - Selesai</p>
+                            <p class="event-date"><i class="far fa-calendar"></i> Minggu, 12 April 2026</p>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Kp. Junti Girang RT.03 RW.10 Desa Banyusari Kec.Katapang Kab.Bandung</p>
                         </div>
                     </div>
                 </div>
@@ -162,67 +492,102 @@
                 <div class="donation-card">
                     <div class="bank-logo">
                         <i class="fas fa-university"></i>
-                        <h4>Gopay</h4>
+                        <h4>GOPAY</h4>
                     </div>
                     <div class="bank-details">
                         <p><strong>Nomor Rekening:</strong> 0881-5118-505</p>
-                        <p><strong>Atas Nama:</strong> Rizky Mahardika Ramadhan</p>
+                        <p><strong>Atas Nama:</strong> Rizky Mahardika</p>
                         <p class="donation-note">Doa dan restu Anda adalah hadiah terindah bagi kami. Terima kasih atas kebahagiaan yang Anda turunkan untuk kami.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Location -->
+            <!-- Location - UPDATED WITH NEW MAPS -->
             <section class="section location-section">
                 <h3 class="section-title">Lokasi Acara</h3>
                 <div class="location-container">
                     <div class="location-info">
-                        <h4><i class="fas fa-mosque"></i> Lokasi Akad Nikah</h4>
-                        <p>Tempat Dinda Dwi Agustin</p>
-                        <p>Kp. Junti Girang, Katapang, Kabupaten Bandung</p>
-                        <p><a href="https://maps.app.goo.gl/noMbMcfWC6jy6Zc49" target="_blank" class="location-link"><i class="fas fa-directions"></i> Buka di Google Maps</a></p>
+                        <h4><i class="fas fa-map-pin"></i> Alamat Lengkap</h4>
+                        <p>Kediaman Dinda Dwi Agustin</p>
+                        <p>Jl. Junti Girang No.131, Bojongkunci, Kec. Pameungpeuk, Kabupaten Bandung, Jawa Barat 40376</p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:085794572156" style="color: #d4af37; text-decoration: none;">085794572156</a></p>
+                        <p><i class="fas fa-info-circle"></i> <strong>Titik Lokasi:</strong> Seberang Pisang Ijo Mbak Nuniek (Gedung putih dengan spanduk hijau)</p>
                     </div>
+                    
+                    <!-- MAPS BARU - Pisang Ijo Mbak Nuniek -->
                     <div class="map-container">
-                        <!-- Maps Toko Dion, Katapang, Bandung -->
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.8768537514334!2d107.5570394741083!3d-7.023758568806197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ed55a4d28665%3A0xf936b7d55c8068df!2sToko%20Dion!5e0!3m2!1sen!2sid!4v1769965064354!5m2!1sen!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.882395966751!2d107.55819307403718!3d-7.023107668799231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ec107495add3%3A0xd3420241113673bf!2sPisang%20Ijo%20Mbak%20Nuniek!5e0!3m2!1sen!2sid!4v1772720040935!5m2!1sen!2sid" 
                             width="100%" 
-                            height="300" 
+                            height="350" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Lokasi Pernikahan Rizky & Dinda - Toko Dion, Katapang">
+                            title="Peta Lokasi Pernikahan Rizky & Dinda - Pisang Ijo Mbak Nuniek">
                         </iframe>
+                    </div>
+                    
+                    <!-- Tombol Google Maps -->
+                    <div class="location-buttons">
+                        <a href="https://maps.app.goo.gl/uAFBHU7n6uhrUB5d8" target="_blank" class="btn-location" style="background: #d4af37;">
+                            <i class="fab fa-google"></i> Buka Google Maps
+                        </a>
+                        <a href="https://www.google.com/maps/dir//Pisang+Ijo+Mbak+Nuniek,+Jl.+Junti+Girang+No.131,+Bojongkunci,+Kec.+Pameungpeuk,+Kabupaten+Bandung,+Jawa+Barat+40376/@-7.0231077,107.5581931,17z" target="_blank" class="btn-location" style="background: #8B4513;">
+                            <i class="fas fa-route"></i> Petunjuk Arah
+                        </a>
+                    </div>
+                    
+                    <!-- Catatan Lokasi -->
+                    <div class="location-note">
+                        <i class="fas fa-map-pin" style="color: #d4af37; font-size: 1.2rem; margin-right: 8px;"></i>
+                        <span style="color: #555;"><strong>Catatan Penting:</strong> Lokasi berada di seberang <strong style="color: #d4af37;">Pisang Ijo Mbak Nuniek</strong>. Cari gedung berwarna putih dengan spanduk hijau. Jika Anda ingin menggunakan Google Maps, "Klik" pada halaman maps yang sudah di tetapkan.</span>
                     </div>
                 </div>
             </section>
 
             <!-- Guest Comments -->
-            <section class="section comments-section">
-                <h3 class="section-title">Ucapan & Doa</h3>
-                <p class="section-subtitle">Berikan ucapan dan doa terbaik untuk kami</p>
-                
-                <form id="comment-form">
-                    <div class="form-group">
-                        <input type="text" id="comment-name" placeholder="Nama Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="comment-message" rows="4" placeholder="Tulis ucapan dan doa untuk Rizky & Dinda..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Kirim Ucapan
-                    </button>
-                </form>
-                
-                <div class="comments-container">
-                    <h4>Ucapan Terbaru</h4>
-                    <div id="comments-list">
-                        <!-- Komentar akan dimuat di sini oleh comments.js -->
-                    </div>
-                </div>
-            </section>
+            <!-- Guest Comments -->
+<section class="section comments-section">
+    <h3 class="section-title">Ucapan & Doa</h3>
+    <p class="section-subtitle">Berikan ucapan dan doa terbaik untuk kami</p>
+    
+    <!-- FORM TERHUBUNG KE FORMSPREE -->
+    <form id="comment-form" action="https://formspree.io/f/mzdkvang" method="POST">
 
+        <input type="hidden" name="_subject" value="Ucapan Undangan Rizky & Dinda">
+
+        <div class="form-group">
+            <input 
+            type="text" 
+            id="comment-name" 
+            name="nama"
+            placeholder="Nama Anda" 
+            required>
+        </div>
+
+        <div class="form-group">
+            <textarea 
+            id="comment-message" 
+            name="ucapan"
+            rows="4" 
+            placeholder="Tulis ucapan dan doa untuk Rizky & Dinda..." 
+            required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Kirim Ucapan
+        </button>
+
+    </form>
+
+    <div class="comments-container">
+        <h4>Ucapan Terbaru</h4>
+        <div id="comments-list">
+            <p class="no-comments">Ucapan akan dikirim ke sistem tamu.</p>
+        </div>
+    </div>
+</section>
             <!-- Closing -->
             <section class="section closing-section">
                 <div class="closing-content">
@@ -231,7 +596,8 @@
                     <p class="closing-names">Rizky & Dinda</p>
                     <div class="families">
                         <p>Keluarga Besar</p>
-                        <p><strong>Bapak Sobar & Ibu Dewi</strong> dan <strong>Bapak Edi Setiawan & Ibu Lina Rostini</strong></p>
+                        <p><strong>Bapak Edi Setiawan & Ibu Lina</strong> dan <strong>Bapak Sobar & Ibu Dewi Sarimanah
+                            |Desain By Rizky Mahardika</strong></p>
                     </div>
                 </div>
             </section>
