@@ -1,31 +1,18 @@
-/* Reset & Base Styles */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #8B7355; /* Coklat elegan */
-    --secondary-color: #D4AF37; /* Emas */
-    --accent-color: #C19A6B; /* Coklat muda */
-    --light-color: #F8F4E9; /* Krem */
-    --dark-color: #3A2C1C; /* Coklat tua */
-    --text-color: #333;
-    --text-light: #777;
-    --white: #ffffff;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
+    background: #fef9f0;
+    color: #3e2a2a;
     overflow-x: hidden;
-    background-color: var(--light-color);
 }
 
+/* Screens */
 .screen {
     display: none;
     min-height: 100vh;
@@ -36,117 +23,195 @@ body {
     display: block;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--dark-color);
-}
-
 /* Music Player */
 .music-player {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
+    background: rgba(212, 175, 55, 0.9);
+    border-radius: 50px;
+    padding: 8px 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-#music-toggle {
-    background-color: var(--secondary-color);
-    color: var(--white);
+.music-player button {
+    background: none;
     border: none;
-    border-radius: 50px;
-    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    z-index: 1001;
-}
-
-#music-toggle:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
 }
 
 /* Opening Screen */
 #opening-screen {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('assets/images/background/bg1.jpeg') center/cover;
     position: relative;
-    background: linear-gradient(rgba(58, 44, 28, 0.85), rgba(58, 44, 28, 0.9)), 
-                url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
-    padding: 20px;
 }
 
-.opening-content {
-    max-width: 800px;
-    z-index: 2;
-}
-
-.opening-text h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-.couple-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4.5rem;
-    color: var(--white);
-    margin: 20px 0;
-}
-
-.wedding-date {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-}
-
-.instruction {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-/* Opening Gallery */
-.gallery-opening {
-    margin: 40px auto;
-    max-width: 700px;
-}
-
-.gallery-container {
-    position: relative;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.gallery-slide {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+    background: rgba(0,0,0,0.5);
+}
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.opening-text h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.couple-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin: 20px 0;
+}
+
+.wedding-date {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.btn-open {
+    background: #d4af37;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    color: #3e2a2a;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-open:hover {
+    background: #b8860b;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Kepada Yth di Opening Screen */
+.to-name-opening {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+    border: 2px solid #d4af37;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.to-name-opening p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.to-name-opening h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #b8860b;
+    margin: 5px 0;
+}
+
+.to-name-opening .di-tempat {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* Dropdown Style */
+.guest-selector {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #d4af37;
+}
+
+.guest-selector label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: #b8860b;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.guest-selector select {
+    width: 100%;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
+    background: white;
+    color: #555;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.guest-selector select:focus {
+    border-color: #b8860b;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.guest-selector .note-dev {
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Gallery Opening */
+.gallery-opening {
+    margin: 30px auto;
+    max-width: 400px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.gallery-container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.gallery-slide {
+    display: none;
 }
 
 .gallery-slide.active {
-    opacity: 1;
+    display: block;
 }
 
 .gallery-slide img {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -154,641 +219,653 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     gap: 20px;
+    margin-top: 15px;
 }
 
-.gallery-prev, .gallery-next {
-    background-color: var(--secondary-color);
-    color: var(--white);
+.gallery-controls button {
+    background: rgba(212, 175, 55, 0.8);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.gallery-prev:hover, .gallery-next:hover {
-    background-color: var(--primary-color);
+    color: white;
 }
 
 .gallery-dots {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.5);
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: var(--transition);
 }
 
 .dot.active {
-    background-color: var(--secondary-color);
-}
-
-/* Open Button */
-.btn-open {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    margin: 30px 0;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: var(--shadow);
-}
-
-.btn-open:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+    background: #d4af37;
 }
 
 .wedding-symbol {
+    margin-top: 30px;
     font-size: 2rem;
-    color: var(--secondary-color);
-    margin-top: 20px;
-    animation: pulse 2s infinite;
+    color: #d4af37;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Main Invitation */
+/* Main Invitation Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header */
 .invitation-header {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(to right, var(--light-color), #f0e8d8, var(--light-color));
-    border-radius: 10px;
-    margin-bottom: 40px;
-    box-shadow: var(--shadow);
+    padding: 30px 0;
+    border-bottom: 2px solid #d4af37;
 }
 
 .invitation-header h1 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #b8860b;
 }
 
 .invitation-header h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: var(--dark-color);
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin: 10px 0;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 800px;
+    font-style: italic;
+    color: #666;
+    max-width: 600px;
     margin: 0 auto;
-    line-height: 1.8;
 }
 
-/* Section Styling */
 .section {
-    margin-bottom: 60px;
-    padding: 40px;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    margin: 50px 0;
 }
 
 .section-title {
-    text-align: center;
+    font-family: 'Dancing Script', cursive;
     font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: var(--secondary-color);
-}
-
-.section-subtitle {
     text-align: center;
-    color: var(--text-light);
+    color: #b8860b;
     margin-bottom: 30px;
-    font-size: 1.1rem;
 }
 
-/* Second Gallery */
+/* Kepada Yth di dalam undangan */
+.to-name-section {
+    text-align: center;
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+    border-radius: 15px;
+    border-left: 5px solid #d4af37;
+    border-right: 5px solid #d4af37;
+}
+
+.to-name-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.to-name-section h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #b8860b;
+    margin: 5px 0;
+}
+
+/* Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.gallery-item {
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    transition: var(--transition);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
+/* Invited Section */
+.invited-section {
+    background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+    border: 2px solid #d4af37;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 20px;
+    position: relative;
 }
 
-/* Countdown */
-.countdown-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 30px 0;
+.invited-section::before {
+    content: '"';
+    font-family: 'Dancing Script', cursive;
+    font-size: 150px;
+    color: rgba(212, 175, 55, 0.1);
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    transform: rotate(180deg);
 }
 
-.countdown-box {
-    background-color: var(--light-color);
-    border-radius: 10px;
-    padding: 25px 20px;
-    min-width: 120px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    border: 2px solid var(--accent-color);
+.invited-section::after {
+    content: '"';
+    font-family: 'Dancing Script', cursive;
+    font-size: 150px;
+    color: rgba(212, 175, 55, 0.1);
+    position: absolute;
+    bottom: -40px;
+    right: 10px;
 }
 
-.countdown-value {
+.invited-title {
+    font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.countdown-label {
-    font-size: 1rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.countdown-date {
+    color: #b8860b;
     text-align: center;
-    font-size: 1.3rem;
-    color: var(--dark-color);
-    margin-top: 20px;
-    font-weight: 500;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Event Details */
-.event-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.event-card {
-    display: flex;
-    background-color: var(--light-color);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-}
-
-.event-icon {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
+.invited-title i {
+    margin: 0 15px;
+    color: #d4af37;
     font-size: 2rem;
 }
 
-.event-content {
-    padding: 25px;
-    flex: 1;
-}
-
-.event-content h4 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.event-time, .event-date, .event-location {
+.invited-list {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    color: var(--text-light);
-}
-
-.event-time i, .event-date i, .event-location i {
-    color: var(--secondary-color);
-}
-
-/* Donation */
-.donation-card {
-    display: flex;
-    background-color: var(--light-color);
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 700px;
-    margin: 0 auto;
-    box-shadow: var(--shadow);
-}
-
-.bank-logo {
-    background-color: var(--primary-color);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 150px;
-    padding: 20px;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-.bank-logo i {
-    font-size: 3rem;
-    margin-bottom: 15px;
+.invited-item {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+    color: #555;
+    border: 1px solid #d4af37;
+    transition: all 0.3s ease;
+    flex: 0 1 auto;
+    text-align: center;
 }
 
-.bank-details {
-    padding: 30px;
-    flex: 1;
+.invited-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    background: #d4af37;
+    color: white;
 }
 
-.bank-details p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.donation-note {
-    font-style: italic;
-    color: var(--text-light);
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed var(--accent-color);
-}
-
-/* Location */
-.location-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.invited-note {
+    text-align: center;
     margin-top: 30px;
+    font-style: italic;
+    color: #b8860b;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    font-family: 'Dancing Script', cursive;
 }
 
-.location-info {
-    background-color: var(--light-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+/* RSVP Section */
+.rsvp-section {
+    background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin: 40px 0;
 }
 
-.location-info h4 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.rsvp-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.location-info p {
-    margin-bottom: 15px;
-    color: var(--text-light);
-}
-
-.location-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.location-link:hover {
-    color: var(--primary-color);
-}
-
-.map-container {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-/* Comments */
-#comment-form {
-    max-width: 700px;
-    margin: 0 auto 40px;
+.rsvp-form {
+    max-width: 500px;
+    margin: 0 auto 30px;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group input, .form-group textarea {
+.rsvp-form input, .rsvp-form select {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus, .form-group textarea:focus {
     outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
 }
 
-.btn-submit {
-    background-color: var(--secondary-color);
-    color: var(--white);
+.rsvp-form input:focus, .rsvp-form select:focus {
+    border-color: #b8860b;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.btn-rsvp {
+    background: #d4af37;
+    color: #3e2a2a;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    border-radius: 50px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
     cursor: pointer;
-    transition: var(--transition);
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-rsvp:hover {
+    background: #b8860b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.confirmed-list {
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.confirmed-item {
+    background: #fff9f9;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border-left: 4px solid #d4af37;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
-    margin: 0 auto;
 }
 
-.btn-submit:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+.confirmed-name {
+    font-weight: bold;
+    color: #b8860b;
 }
 
-.comments-container {
-    max-width: 800px;
-    margin: 0 auto;
+.confirmed-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
 }
 
-.comments-container h4 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+.status-hadir {
+    background: #4caf50;
+    color: white;
+}
+
+.status-tidak {
+    background: #f44336;
+    color: white;
+}
+
+.confirmed-jumlah {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.empty-confirmed {
     text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.countdown-label {
+    color: white;
+    font-size: 0.8rem;
+}
+
+.countdown-date {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #b8860b;
+}
+
+/* Event Details */
+.event-details {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 300px;
+    border: 1px solid #d4af37;
+}
+
+.event-icon {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+/* Donation */
+.donation-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #d4af37;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.bank-logo i {
+    font-size: 3rem;
+    color: #d4af37;
+}
+
+/* Map */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 25px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.location-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-location:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.location-note {
+    text-align: center;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+}
+
+/* Comments */
+.comments-container {
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .comment-item {
-    background-color: var(--light-color);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    background: #faf6f0;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    border-left: 3px solid #d4af37;
 }
 
 .comment-name {
-    font-weight: 700;
-    color: var(--primary-color);
+    font-weight: bold;
+    color: #b8860b;
+    margin-bottom: 5px;
 }
 
 .comment-date {
-    color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    color: #999;
+    margin-left: 10px;
 }
 
-.comment-text {
-    color: var(--text-color);
-    line-height: 1.6;
+.comment-message {
+    color: #555;
+    margin-top: 5px;
+}
+
+.no-comments {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+.btn-submit {
+    background: #d4af37;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #b8860b;
+    color: white;
 }
 
 /* Closing */
 .closing-content {
     text-align: center;
     padding: 40px;
-    background: linear-gradient(to right, var(--light-color), #f0e8d8, var(--light-color));
-    border-radius: 10px;
-}
-
-.closing-content h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.closing-content p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    background: linear-gradient(135deg, #fff9f9, #fff0f0);
+    border-radius: 20px;
 }
 
 .closing-names {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: var(--dark-color);
-    margin: 30px 0;
+    font-size: 1.8rem;
+    color: #b8860b;
+    margin-top: 15px;
 }
 
-.families {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid var(--accent-color);
-}
-
-.families p {
-    margin-bottom: 10px;
-}
-
-/* Floating Navigation */
+/* Floating Nav */
 .floating-nav {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    left: 0;
+    right: 0;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 999;
-}
-
-.nav-item {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 15px;
+    background: rgba(255,255,240,0.95);
+    padding: 10px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    z-index: 99;
+}
+
+.floating-nav a {
+    color: #b8860b;
+    font-size: 1.3rem;
     text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
 }
 
-.nav-item:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .couple-name {
-        font-size: 3.5rem;
-    }
-    
-    .invitation-header h2 {
-        font-size: 3rem;
-    }
-    
-    .gallery-container {
-        height: 350px;
-    }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    .section {
-        padding: 30px 20px;
-    }
-    
     .couple-name {
-        font-size: 2.8rem;
-    }
-    
-    .invitation-header h2 {
         font-size: 2.5rem;
     }
-    
-    .countdown-box {
-        min-width: 100px;
-        padding: 20px 15px;
-    }
-    
-    .countdown-value {
+    .invited-title {
         font-size: 2rem;
     }
-    
-    .donation-card {
-        flex-direction: column;
+    .invited-item {
+        font-size: 0.85rem;
+        padding: 8px 15px;
     }
-    
-    .bank-logo {
+    .invited-section::before,
+    .invited-section::after {
+        font-size: 100px;
+    }
+    .map-container {
+        height: 300px;
+    }
+    .btn-location {
         width: 100%;
-        padding: 15px;
-        flex-direction: row;
         justify-content: center;
-        gap: 15px;
     }
-    
-    .bank-logo i {
-        font-size: 2rem;
-        margin-bottom: 0;
+    .to-name-opening h3,
+    .to-name-section h3 {
+        font-size: 1.5rem;
     }
-    
-    .floating-nav {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .nav-item {
-        width: 45px;
-        height: 45px;
+    .confirmed-item {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-@media (max-width: 576px) {
-    .opening-text h1 {
-        font-size: 2.5rem;
+@media (max-width: 480px) {
+    .invited-item {
+        text-align: center;
     }
-    
-    .couple-name {
-        font-size: 2.2rem;
-    }
-    
-    .invitation-header h1 {
-        font-size: 2rem;
-    }
-    
-    .invitation-header h2 {
-        font-size: 2rem;
-    }
-    
-    .gallery-container {
+    .map-container {
         height: 250px;
     }
-    
-    .countdown-box {
-        min-width: 70px;
-        padding: 15px 10px;
+    .location-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
-    
-    .countdown-value {
-        font-size: 1.8rem;
-    }
-    
-    .event-details {
-        grid-template-columns: 1fr;
-    }
-    
-    .floating-nav {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .nav-item {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
+}
+/* ===================================== */
+/* TABEL DOA & UCAPAN */
+/* ===================================== */
+
+.ucapan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.ucapan-table thead {
+    background: linear-gradient(135deg,#d4af37,#b8860b);
+    color: white;
+}
+
+.ucapan-table th {
+    padding: 14px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.ucapan-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f1e5c8;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.ucapan-table tr:hover {
+    background: #fff9f0;
+}
+
+.ucapan-nama {
+    font-weight: bold;
+    color: #b8860b;
+}
+
+.ucapan-pesan {
+    line-height: 1.6;
+}
+
+.ucapan-waktu {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+}
+
+@media (max-width:768px){
+    .ucapan-table th,
+    .ucapan-table td{
+        font-size:0.8rem;
+        padding:10px;
     }
 }

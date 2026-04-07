@@ -11,222 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Playfair+Display:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <style>
-        /* CSS Tambahan untuk Bagian Turut Mengundang */
-        .invited-section {
-            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
-            border: 2px solid #d4af37;
-            padding: 40px 20px;
-            margin: 40px 0;
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .invited-section::before {
-            content: '"';
-            font-family: 'Dancing Script', cursive;
-            font-size: 150px;
-            color: rgba(212, 175, 55, 0.1);
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            transform: rotate(180deg);
-        }
-        
-        .invited-section::after {
-            content: '"';
-            font-family: 'Dancing Script', cursive;
-            font-size: 150px;
-            color: rgba(212, 175, 55, 0.1);
-            position: absolute;
-            bottom: -40px;
-            right: 10px;
-        }
-        
-        .invited-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #b8860b;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .invited-title i {
-            margin: 0 15px;
-            color: #d4af37;
-            font-size: 2rem;
-        }
-        
-        .invited-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .invited-item {
-            background: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            font-size: 0.95rem;
-            color: #555;
-            border: 1px solid #d4af37;
-            transition: all 0.3s ease;
-            flex: 0 1 auto;
-            text-align: center;
-        }
-        
-        .invited-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-            background: #d4af37;
-            color: white;
-        }
-        
-        .invited-item i {
-            margin-right: 8px;
-            color: #d4af37;
-            transition: all 0.3s ease;
-        }
-        
-        .invited-item:hover i {
-            color: white;
-        }
-        
-        .invited-note {
-            text-align: center;
-            margin-top: 30px;
-            font-style: italic;
-            color: #b8860b;
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 1;
-            font-family: 'Dancing Script', cursive;
-        }
-        
-        .invited-subsection {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 2px dashed #d4af37;
-        }
-        
-        .invited-subtitle {
-            text-align: center;
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5rem;
-            color: #b8860b;
-            margin-bottom: 20px;
-        }
-        
-        .invited-subtitle i {
-            margin: 0 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* CSS untuk Map */
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-top: 25px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        
-        .location-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 25px;
-        }
-        
-        .btn-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 25px;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-location:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        
-        .btn-location i {
-            font-size: 1.1rem;
-        }
-        
-        .location-note {
-            text-align: center;
-            margin-top: 20px;
-            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
-            padding: 15px;
-            border-radius: 15px;
-            border: 1px solid #d4af37;
-        }
-        
-        @media (max-width: 768px) {
-            .invited-title {
-                font-size: 2rem;
-            }
-            
-            .invited-item {
-                font-size: 0.85rem;
-                padding: 8px 15px;
-            }
-            
-            .invited-section::before,
-            .invited-section::after {
-                font-size: 100px;
-            }
-            
-            .map-container {
-                height: 300px;
-            }
-            
-            .btn-location {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .invited-item {
-                min-width: auto;
-                text-align: center;
-            }
-            
-            .map-container {
-                height: 250px;
-            }
-            
-            .location-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Music Player -->
@@ -236,7 +20,6 @@
             <span id="music-status">Musik: ON</span>
         </button>
         <audio id="background-music" loop>
-            <!-- Programmer dapat mengganti file musik di sini -->
             <source src="assets/music/background-music.mp3" type="audio/mpeg">
             Browser Anda tidak mendukung elemen audio.
         </audio>
@@ -250,7 +33,23 @@
                 <h1>Undangan Pernikahan</h1>
                 <h2 class="couple-name">Rizky & Dinda</h2>
                 <p class="wedding-date">Minggu, 12 April 2026</p>
-                <p class="instruction">Klik tombol di bawah untuk membuka undangan</p>
+            </div>
+            
+            <!-- KEPADA YTH DI HALAMAN PEMBUKA - DENGAN DROPDOWN SEMUA NAMA TAMU -->
+            <div class="to-name-opening" id="toNameOpening">
+                <p>Kepada Yth.</p>
+                <h3 id="openingGuestName">Bpk/Ibu/Kerabat & Teman</h3>
+                <p class="di-tempat">di tempat</p>
+                
+                <div class="guest-selector">
+                    <label><i class="fas fa-user-friends"></i> Pilih Nama Tamu:</label>
+                    <select id="guestSelect">
+                        <option value="Bpk/Keluarga">-- Pilih Nama Tamu --</option>
+                    </select>
+                    <div class="note-dev">
+                        <i class="fas fa-code"></i> Silahkan Konfirmasi Nama Tamu | Desain By Rizky Mahardika
+                    </div>
+                </div>
             </div>
             
             <!-- Galeri Foto Pengantin (Tampilan Awal) -->
@@ -297,6 +96,13 @@
                 <p class="subtitle">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." (QS. Ar-Rum: 21)</p>
             </header>
 
+            <!-- KEPADA YTH DI DALAM UNDANGAN - HANYA MENAMPILKAN -->
+            <div class="to-name-section" id="toNameInside">
+                <p>Kepada Yth.</p>
+                <h3 id="insideGuestName">Bpk/Keluarga</h3>
+                <p class="di-tempat">di tempat</p>
+            </div>
+
             <!-- Galeri Foto Pengantin (Tampilan Kedua) -->
             <section class="section gallery-section">
                 <h3 class="section-title">Galeri Cinta Kami</h3>
@@ -318,7 +124,7 @@
                 </div>
             </section>
 
-            <!-- TURUT MENGUNDANG SECTION - DENGAN SEMUA NAMA BARU -->
+            <!-- TURUT MENGUNDANG SECTION (HANYA KELUARGA INTI) -->
             <section class="invited-section">
                 <h3 class="invited-title">
                     <i class="fas fa-ring"></i>
@@ -326,66 +132,45 @@
                     <i class="fas fa-ring"></i>
                 </h3>
                 
-                <!-- TURUT MENGUNDANG SECTION -->
-<section class="invited-section">
-    <h3 class="invited-title">
-        Turut Mengundang
-    </h3>
-    
-    <!-- Rekan & Grup -->
-    <div class="invited-subsection">
-        <h4 class="invited-subtitle">
-            Rekan & Grup
-        </h4>
-        <div class="invited-list">
-            <div class="invited-item">Phylon Grup</div>
-            <div class="invited-item">Mabes 92</div>
-            <div class="invited-item">Keretek 92</div>
-            <div class="invited-item">Lembur Panineungan</div>
-            <div class="invited-item">Ikasa</div>
-            <div class="invited-item">SAT BODY PT TRISCO</div>
-            <div class="invited-item">Owner Tianlala & Crew Tianlala</div>
-            <div class="invited-item">All Rekan Pengantin Pria</div>
-        </div>
-    </div>
-    
-    <!-- Keluarga & Kerabat Jakarta -->
-    <div class="invited-subsection">
-        <h4 class="invited-subtitle">
-            Keluarga & Kerabat Jakarta
-        </h4>
-        <div class="invited-list">
-            <div class="invited-item">Dela</div>
-            <div class="invited-item">Arip Jakarta</div>
-            <div class="invited-item">Bang Uway Jakarta</div>
-            <div class="invited-item">Mely Jakarta</div>
-        </div>
-    </div>
-    
-    <!-- Pemerintah Desa & Keluarga Besar -->
-    <div class="invited-subsection">
-        <h4 class="invited-subtitle">
-            Pemerintah Desa & Keluarga Besar
-        </h4>
-        <div class="invited-list">
-            <div class="invited-item">Bpk. Kades Banyusari</div>
-            <div class="invited-item">Bpk. Pipin Aripin (Kadus 4)</div>
-            <div class="invited-item">Bpk. Udjun (Alm)</div>
-            <div class="invited-item">Kel. Besar Bpk. Momo Rahmat (Alm)</div>
-            <div class="invited-item">Bpk. Uyu Suparyu (Alm) & Ibu Nining Warningsih</div>
-            <div class="invited-item">Bpk. Ayong Sudrajat (Alm) & Ibu Ai Tatih</div>
-            <div class="invited-item">Bpk. Ema Amajun (Jakarta)</div>
-            <div class="invited-item">Bpk. Dadang & Bpk. Yusup</div>
-            <div class="invited-item">Ibu Titin</div>
-            <div class="invited-item">Bpk. Tedy & Popi</div>
-            <div class="invited-item">Bapak Indra & Rani</div>
-        </div>
-    </div>
-    
-    <p class="invited-note">
-        Beserta seluruh keluarga, kerabat, sahabat, dan handai taulan yang tidak dapat disebutkan satu per satu
-    </p>
-</section>
+                <div class="invited-list" id="familyGuestList">
+                    <!-- Hanya keluarga inti yang tampil di sini -->
+                </div>
+                
+                <p class="invited-note">
+                    Beserta seluruh keluarga, kerabat, sahabat, dan handai taulan yang tidak dapat disebutkan satu per satu
+                </p>
+            </section>
+
+            <!-- KONFIRMASI KEHADIRAN (RSVP) -->
+            <section class="rsvp-section">
+                <h3 class="rsvp-title">
+                    <i class="fas fa-check-circle"></i> Konfirmasi Kehadiran
+                </h3>
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="form-group">
+                        <input type="text" id="rsvpName" placeholder="Nama Lengkap (sesuai undangan)" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="rsvpStatus" required>
+                            <option value="">-- Pilih Status Kehadiran --</option>
+                            <option value="Hadir">✅ Hadir</option>
+                            <option value="Tidak Hadir">❌ Tidak Hadir</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="jumlahGroup" style="display:none;">
+                        <input type="number" id="rsvpJumlah" placeholder="Jumlah yang hadir" min="1" max="10">
+                    </div>
+                    <button type="submit" class="btn-rsvp">
+                        <i class="fas fa-paper-plane"></i> Kirim Konfirmasi
+                    </button>
+                </form>
+                
+                <h4 style="text-align:center; margin-top:20px; color:#b8860b;">📋 Tamu Yang Sudah Mengkonfirmasi Kehadiran</h4>
+                <div class="confirmed-list" id="confirmedList">
+                    <div class="empty-confirmed">Belum ada konfirmasi. Silakan konfirmasi kehadiran Anda.</div>
+                </div>
+            </section>
+
             <!-- Countdown -->
             <section class="section countdown-section">
                 <h3 class="section-title">Hitungan Mundur Menuju Hari Bahagia</h3>
@@ -456,7 +241,7 @@
                 </div>
             </section>
 
-            <!-- Location - UPDATED WITH NEW MAPS -->
+            <!-- Location -->
             <section class="section location-section">
                 <h3 class="section-title">Lokasi Acara</h3>
                 <div class="location-container">
@@ -468,7 +253,6 @@
                         <p><i class="fas fa-info-circle"></i> <strong>Titik Lokasi:</strong> Seberang Pisang Ijo Mbak Nuniek (Gedung putih dengan spanduk hijau)</p>
                     </div>
                     
-                    <!-- MAPS BARU - Pisang Ijo Mbak Nuniek -->
                     <div class="map-container">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.882395966751!2d107.55819307403718!3d-7.023107668799231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ec107495add3%3A0xd3420241113673bf!2sPisang%20Ijo%20Mbak%20Nuniek!5e0!3m2!1sen!2sid!4v1772720040935!5m2!1sen!2sid" 
@@ -482,7 +266,6 @@
                         </iframe>
                     </div>
                     
-                    <!-- Tombol Google Maps -->
                     <div class="location-buttons">
                         <a href="https://maps.app.goo.gl/uAFBHU7n6uhrUB5d8" target="_blank" class="btn-location" style="background: #d4af37;">
                             <i class="fab fa-google"></i> Buka Google Maps
@@ -492,56 +275,69 @@
                         </a>
                     </div>
                     
-                    <!-- Catatan Lokasi -->
                     <div class="location-note">
                         <i class="fas fa-map-pin" style="color: #d4af37; font-size: 1.2rem; margin-right: 8px;"></i>
-                        <span style="color: #555;"><strong>Catatan Penting:</strong> Lokasi berada di seberang <strong style="color: #d4af37;">Pisang Ijo Mbak Nuniek</strong>. Cari gedung berwarna putih dengan spanduk hijau. Jika Anda ingin menggunakan Google Maps, "Klik" pada halaman maps yang sudah di tetapkan.</span>
+                        <span style="color: #555;"><strong>Catatan Penting:</strong> Lokasi berada di seberang <strong style="color: #d4af37;">Pisang Ijo Mbak Nuniek</strong>. Cari gedung berwarna putih dengan spanduk hijau.</span>
                     </div>
                 </div>
             </section>
 
             <!-- Guest Comments -->
-            <!-- Guest Comments -->
-<section class="section comments-section">
-    <h3 class="section-title">Ucapan & Doa</h3>
-    <p class="section-subtitle">Berikan ucapan dan doa terbaik untuk kami</p>
-    
-    <!-- FORM TERHUBUNG KE FORMSPREE -->
-    <form id="comment-form" action="https://formspree.io/f/mzdkvang" method="POST">
+            <section class="section comments-section">
+                <h3 class="section-title">Ucapan & Doa</h3>
+                <p class="section-subtitle">Berikan ucapan dan doa terbaik untuk kami</p>
+                
+                <form id="comment-form">
 
-        <input type="hidden" name="_subject" value="Ucapan Undangan Rizky & Dinda">
+<table style="width:100%; background:white; border-radius:15px; padding:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
 
-        <div class="form-group">
-            <input 
-            type="text" 
-            id="comment-name" 
-            name="nama"
-            placeholder="Nama Anda" 
-            required>
-        </div>
+<tr>
+<td style="width:30%; font-weight:bold; color:#b8860b;">Nama</td>
+<td>
+<input type="text" id="comment-name" placeholder="Tulis Nama Anda" required 
+style="width:100%; padding:12px; border:1px solid #d4af37; border-radius:8px;">
+</td>
+</tr>
 
-        <div class="form-group">
-            <textarea 
-            id="comment-message" 
-            name="ucapan"
-            rows="4" 
-            placeholder="Tulis ucapan dan doa untuk Rizky & Dinda..." 
-            required></textarea>
-        </div>
+<tr>
+<td style="font-weight:bold; color:#b8860b;">Ucapan</td>
+<td>
+<textarea id="comment-message" rows="4" placeholder="Tulis ucapan dan doa untuk Rizky & Dinda..." required 
+style="width:100%; padding:12px; border:1px solid #d4af37; border-radius:8px;"></textarea>
+</td>
+</tr>
 
-        <button type="submit" class="btn-submit">
-            <i class="fas fa-paper-plane"></i> Kirim Ucapan
-        </button>
+<tr>
+<td></td>
+<td>
+<button type="submit" class="btn-submit">
+<i class="fas fa-paper-plane"></i> Kirim Ucapan
+</button>
+</td>
+</tr>
 
-    </form>
+</table>
 
-    <div class="comments-container">
-        <h4>Ucapan Terbaru</h4>
-        <div id="comments-list">
-            <p class="no-comments">Ucapan akan dikirim ke sistem tamu.</p>
-        </div>
-    </div>
-</section>
+</form>
+                <div class="comments-container">
+    <h4>Ucapan Terbaru</h4>
+
+    <table class="ucapan-table">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Ucapan</th>
+                <th>Waktu</th>
+            </tr>
+        </thead>
+
+        <tbody id="comments-list">
+        <!-- Ucapan tamu akan muncul otomatis di sini -->
+        </tbody>
+
+    </table>
+
+</div>
             <!-- Closing -->
             <section class="section closing-section">
                 <div class="closing-content">
@@ -550,8 +346,7 @@
                     <p class="closing-names">Rizky & Dinda</p>
                     <div class="families">
                         <p>Keluarga Besar</p>
-                        <p><strong>Bapak Edi Setiawan & Ibu Lina</strong> dan <strong>Bapak Sobar & Ibu Dewi Sarimanah
-                            |Desain By Rizky Mahardika</strong></p>
+                        <p><strong>Bapak Edi Setiawan & Ibu Lina</strong> dan <strong>Bapak Sobar & Ibu Dewi Sarimanah | Desain By Rizky Mahardika</strong></p>
                     </div>
                 </div>
             </section>
@@ -568,10 +363,7 @@
         </nav>
     </section>
 
-    <!-- SCRIPT UNTUK KOMENTAR (JSONBin) -->
-    <script src="comments.js"></script>
-    
-    <!-- Script Utama Website -->
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
